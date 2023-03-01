@@ -1,17 +1,21 @@
 import Head from "next/head";
 
-export default function HeadMeta() {
+export default function HeadMeta({ title, description }) {
   return (
     <div>
       <Head>
-        <title>Drive Assignment 1</title>
+        <title>{title ? title : "News Website"}</title>
         <meta
           name="description"
-          content="Practising Next Js and Custom Hooks"
+          content={
+            description
+              ? description
+              : "Get all the latest News and Information related to sports, politics, technology, science"
+          }
         />
         <meta
           name="keywords"
-          content="Custom Hooks, Lightweight Functional Components"
+          content="Latest News, Information, Sports, Cars, Space, Technology, Cricket, Football, Politics, Movies, Bollywood, Science, Olympics "
         />
         <link rel="icon" href="/drive.png" />
       </Head>
