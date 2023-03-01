@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -14,21 +15,15 @@ const Header = () => {
             />
           </div>
           <div class="hidden space-x-6 text-white md:flex ">
-            <a href="#" class="hover:text-blue-200">
-              Cars
-            </a>
-            <a href="#" class="hover:text-blue-200">
-              Services
-            </a>
-            <a href="#" class="hover:text-blue-200">
-              About Us
-            </a>
-            <a href="#" class="hover:text-blue-200">
-              Careers
-            </a>
-            <a href="#" class="hover:text-blue-200">
-              Community
-            </a>
+            <Link href="/" class="hover:text-blue-200">
+              Top Headlines
+            </Link>
+            <Link href="/top-sources" class="hover:text-blue-200">
+              Top Headlines Sources
+            </Link>
+            <Link href="/search" class="hover:text-blue-200">
+              News Search
+            </Link>
           </div>
           <a
             href="#"
