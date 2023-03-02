@@ -17,7 +17,7 @@ export default function HeadMeta({ title, description }) {
           name="keywords"
           content="Latest News, Information, Sports, Cars, Space, Technology, Cricket, Football, Politics, Movies, Bollywood, Science, Olympics "
         />
-        <link rel="icon" href="/drive.png" />
+        <link rel="icon" href="/newico.png" />
       </Head>
     </div>
   );

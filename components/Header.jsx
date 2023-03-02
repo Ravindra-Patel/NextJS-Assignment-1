@@ -8,29 +8,24 @@ const Header = () => {
         <div class="flex items-center justify-between w-full">
           <div>
             <Image
-              src="/drive_logo.jpg"
+              src="/newsLogo.jpg"
               alt="/drive_logo.jpg"
               width="100"
               height="100"
             />
           </div>
-          <div class="hidden space-x-6 text-white md:flex ">
+          <div class="hidden space-x-6 text-white md:flex mr-10">
             <Link href="/" class="hover:text-blue-200">
-              Top Headlines
+              Home
             </Link>
             <Link href="/top-sources" class="hover:text-blue-200">
-              Top Headlines Sources
+              Sources
             </Link>
             <Link href="/search" class="hover:text-blue-200">
-              News Search
+              Search
             </Link>
           </div>
-          <a
-            href="#"
-            class="hidden p-3 px-7 mr-5 pt-2 text-white bg-blue-700 rounded-full baseline hover:bg-white hover:text-black md:block"
-          >
-            Visit Us
-          </a>
+          
         </div>
       </nav>
     </>
