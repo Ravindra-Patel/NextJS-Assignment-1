@@ -3,35 +3,52 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Article = ({ article }) => {
+  console.log(article);
+
   return (
-    <Link href={`/news/${article.title}`}>
-      <div class="border-2 xs:m-[30px]  sm:m-[20px] lg:m-[50px] ">
-        {article.urlToImage && (
-          <Image
-            class="w-full"
-            src={article.urlToImage}
-            alt="/latest_News.jpg"
-            height="200"
-            width="200"
-          ></Image>
-        )}
-        {!article.urlToImage && (
-          <Image
-            class="w-full"
-            src="/latest_News.jpg"
-            alt="/latest_News.jpg"
-            height="200"
-            width="200"
-          ></Image>
-        )}
-        <div>
-          <h3 class="text-xl pr-3 pl-2 font-bold">{article.title}</h3>
-        </div>
-        <div>
-          <h3 class="text-sm pt-3 pl-2 font-semibold">{article.publishedAt}</h3>
-        </div>
+    <>
+      <div class="border-2 m-2 ">
+        <Link href={`/news/${article.source.id}/${article.title}`}>
+          <div>
+            {article.urlToImage && (
+              <img
+                src={article.urlToImage}
+                alt="/latest_News.jpg"
+                height="100%"
+                width="100%"
+              ></img>
+            )}
+            {!article.urlToImage && (
+              <img
+                src="/latest_News.jpg"
+                alt="/latest_News.jpg"
+                height="100%"
+                width="100%"
+              ></img>
+            )}
+          </div>
+
+          <div>
+            <div>
+              <h3 class="text-xl pl-2 font-bold my-5 hover:underline">
+                {article.title.length > 60
+                  ? article.title.substring(0, 60) + "..."
+                  : article.title}
+              </h3>
+            </div>
+            <div>
+              <h3 class="text-sm pt-3 pl-2 font-semibold">
+                Published Date:{" "}
+                {article.publishedAt.substring(
+                  0,
+                  article.publishedAt.indexOf("T")
+                )}
+              </h3>
+            </div>
+          </div>
+        </Link>
       </div>
-    </Link>
+    </>
   );
 };
 
