@@ -34,11 +34,9 @@ const Title = ({ article }) => {
 export default Title;
 
 export async function getServerSideProps(context) {
-  console.log(context.params);
-
+  
   let url = `https://newsapi.org/v2/everything?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&qInTitle=${context.params.title}&sources=${context.params.source}`;
 
-  console.log(url);
   let response = await fetch(url);
 
   let data = await response.json();

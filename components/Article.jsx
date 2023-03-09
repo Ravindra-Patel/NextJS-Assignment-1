@@ -3,8 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Article = ({ article }) => {
-  console.log(article);
-
+  
   return (
     <>
       <div class="border-2 m-2 ">
