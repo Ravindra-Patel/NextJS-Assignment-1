@@ -16,6 +16,7 @@ const Article = ({ article }) => {
                 alt="/latest_News.jpg"
                 height="100%"
                 width="100%"
+                style={{objectFit:"cover"}}
               ></img>
             )}
             {!article.urlToImage && (
@@ -24,6 +25,7 @@ const Article = ({ article }) => {
                 alt="/latest_News.jpg"
                 height="100%"
                 width="100%"
+                style={{objectFit:"cover"}}
               ></img>
             )}
           </div>
