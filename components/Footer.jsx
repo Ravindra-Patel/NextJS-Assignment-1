@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <div class="flex text-white w-full bg-darkBlue items-center justify-between w-full p-6 text-xs md:text-sm ">
-      <div class="space-x-3 md:space-x-6 ">
+    <div class="grid md:flex min-w-[320px] text-white w-full bg-darkBlue items-center justify-between w-full p-6 pl-3 md:pl-6 text-sm md:text-sm ">
+      <div class="flex justify-between md:space-x-6 w-[90vw] min-w-[280px] md:w-[30vw]">
         <a href="#" class="hover:text-darkGrayishBlue">
           Privacy Policy
         </a>
@@ -9,7 +9,7 @@ const Footer = () => {
           Terms of Service
         </a>
       </div>
-      <div>Copyright &copy; 2022, All Rights Reserved</div>
+      <div className="mt-5 md:mt-0 flex justify-center">Copyright &copy; 2022, All Rights Reserved</div>
     </div>
   );
 };
