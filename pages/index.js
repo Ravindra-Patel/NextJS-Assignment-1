@@ -4,14 +4,14 @@ import { useState } from "react";
 
 export default function Home({ newsArticles }) {
   const [articleCount, setArticleCount] = useState(6);
-  const totalNews = newsArticles.length;
+  const totalNews = newsArticles?.length;
 
   function handleArticleCount() {
     setArticleCount((prevState) => prevState + 6);
   }
 
   return (
-    <div class="min-h-screen m-10">
+    <div class="min-h-screen md:m-10">
       <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  justify-center">
         {newsArticles.slice(0, articleCount).map((news) => (
           <div key={news.url}>
@@ -22,7 +22,7 @@ export default function Home({ newsArticles }) {
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button
-            class="bg-blue-500 mx-auto mt-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
+            class="bg-blue-500 mx-auto my-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
             onClick={handleArticleCount}
           >
             Load More
@@ -40,7 +40,6 @@ export async function getServerSideProps(context) {
 
   let data = await response.json();
   let newsArticles = await data.articles;
-  console.log(newsArticles);
 
   return {
     props: {

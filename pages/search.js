@@ -32,7 +32,7 @@ const SearchPage = () => {
   const totalNews = data?.length;
 
   return (
-    <div class="min-h-screen m-10">
+    <div class="min-h-screen md:m-10">
       <Search setQuery={setQuery} setUrl={setUrl} />
       <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  justify-center">
         {data.slice(0, articleCount).map((news) => (
@@ -44,7 +44,7 @@ const SearchPage = () => {
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button
-            class="bg-blue-500 mx-auto mt-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
+            class="bg-blue-500 mx-auto my-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
             onClick={handleArticleCount}
           >
             Load More

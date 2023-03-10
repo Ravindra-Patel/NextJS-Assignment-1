@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NewsSource = ({ sources }) => {
   return (
-    <div class="border-2 rounded-md m-5 bg-veryLightGray">
+    <div class="border-2 rounded-md bg-veryLightGray min-w-[300px] mt-4">
       <div>
         <h3 class="text-3xl pl-2 font-bold text-darkBlue">{sources.name}</h3>
       </div>

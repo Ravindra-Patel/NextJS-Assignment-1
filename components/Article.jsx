@@ -6,7 +6,7 @@ const Article = ({ article }) => {
   
   return (
     <>
-      <div class="border-2 m-2 ">
+      <div class="border-2 m-2 min-w-[300px]">
         <Link href={`/news/${article.source.id}/${article.title}`}>
           <div>
             {article.urlToImage && (

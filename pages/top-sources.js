@@ -10,7 +10,7 @@ const TopSources = ({ newsSources }) => {
   }
 
   return (
-    <div class="min-h-screen mx-10">
+    <div class="min-h-screen mx-2 md:mx-10">
       <div class="grid grid-cols-1  md:grid-cols-2 ">
         {newsSources.slice(0, articleCount).map((sources) => (
           <div key={sources.url}>
@@ -21,7 +21,7 @@ const TopSources = ({ newsSources }) => {
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button
-            class="bg-blue-500 mx-auto mb-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
+            class="bg-blue-500 mx-auto my-5 sm:text-sm sm:py-0 h-10 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded "
             onClick={handleArticleCount}
           >
             Load More
