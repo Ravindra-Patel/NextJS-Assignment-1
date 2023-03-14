@@ -3,19 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Article = ({ article }) => {
-  
   return (
     <>
-      <div class="border-2 m-2 min-w-[300px]">
+      <div class="border-2 m-2 min-w-[300px] min-h-[350px] h-[50vh] ">
         <Link href={`/news/${article.source.id}/${article.title}`}>
-          <div>
+          <div className="h-[60%]">
             {article.urlToImage && (
               <img
                 src={article.urlToImage}
                 alt="/latest_News.jpg"
-                height="100%"
-                width="100%"
-                style={{objectFit:"cover"}}
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "100%",
+                  minWidth: "100%",
+                  maxHeight: "100%",
+                  minHeight: "100%",
+                }}
               ></img>
             )}
             {!article.urlToImage && (
@@ -24,12 +27,18 @@ const Article = ({ article }) => {
                 alt="/latest_News.jpg"
                 height="100%"
                 width="100%"
-                style={{objectFit:"cover"}}
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "100%",
+                  minWidth: "100%",
+                  maxHeight: "100%",
+                  minHeight: "100%",
+                }}
               ></img>
             )}
           </div>
 
-          <div>
+          <div className="40%">
             <div>
               <h3 class="text-xl pl-2 font-bold my-5 hover:underline">
                 {article.title.length > 60

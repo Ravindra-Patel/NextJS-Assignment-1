@@ -1,4 +1,4 @@
-const Search = ({ setQuery, setUrl }) => {
+const Search = ({ setQuery, setUrl}) => {
   return (
     <div class="flex justify-end my-5">
       <div>
