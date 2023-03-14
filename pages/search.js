@@ -53,7 +53,7 @@ const SearchPage = () => {
         </div>
       )}
 
-      {error && (
+      {!emptyQuery && error && (
         <div classname="flex justify-center items-center w-full ">
           <ShowError />
         </div>
