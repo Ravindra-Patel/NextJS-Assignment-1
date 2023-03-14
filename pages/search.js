@@ -1,19 +1,20 @@
 import axios from "axios";
 import Article from "../components/Article";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Search from "../components/Search";
+import ShowError from "../components/ShowError";
 
 const SearchPage = () => {
-  const [articleCount, setArticleCount] = useState(6);
+  const [articleCount, setArticleCount] = useState(12);
 
   function handleArticleCount() {
-    setArticleCount((prevState) => prevState + 6);
+    setArticleCount((prevState) => prevState + 12);
   }
 
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(" ");
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-  const [error, setError] = useState(" ");
+  const [error, setError] = useState("");
 
   const setUrl = () => {
     let url = `https://newsapi.org/v2/everything?q=${query}&apiKey=3da13dd2c60f4500a7adfa45782e3895`;
@@ -41,6 +42,7 @@ const SearchPage = () => {
           </div>
         ))}
       </div>
+      {error && <ShowError />}
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button

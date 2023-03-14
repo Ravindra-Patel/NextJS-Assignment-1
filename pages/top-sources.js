@@ -2,16 +2,16 @@ import NewsSource from "../components/NewsSource";
 import { useState } from "react";
 
 const TopSources = ({ newsSources }) => {
-  const [articleCount, setArticleCount] = useState(6);
+  const [articleCount, setArticleCount] = useState(12);
   const totalNews = newsSources.length;
 
   function handleArticleCount() {
-    setArticleCount((prevState) => prevState + 6);
+    setArticleCount((prevState) => prevState + 12);
   }
 
   return (
-    <div class="min-h-screen mx-2 md:mx-10">
-      <div class="grid grid-cols-1  md:grid-cols-2 ">
+    <div class="min-h-screen mx-2 md:mx-4">
+      <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
         {newsSources.slice(0, articleCount).map((sources) => (
           <div key={sources.url}>
             <NewsSource sources={sources} />

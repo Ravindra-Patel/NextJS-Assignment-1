@@ -3,11 +3,11 @@ import Article from "../components/Article";
 import { useState } from "react";
 
 export default function Home({ newsArticles }) {
-  const [articleCount, setArticleCount] = useState(6);
+  const [articleCount, setArticleCount] = useState(12);
   const totalNews = newsArticles?.length;
 
   function handleArticleCount() {
-    setArticleCount((prevState) => prevState + 6);
+    setArticleCount((prevState) => prevState + 12);
   }
 
   return (
