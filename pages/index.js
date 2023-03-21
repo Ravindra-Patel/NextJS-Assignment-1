@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Article from "../components/Article";
 import { useState } from "react";
+import ShowError from "../components/ShowError";
 
 export default function Home({ newsArticles }) {
   const [articleCount, setArticleCount] = useState(12);
@@ -11,14 +12,21 @@ export default function Home({ newsArticles }) {
   }
 
   return (
-    <div class="min-h-screen md:m-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  justify-center">
-        {newsArticles.slice(0, articleCount).map((news) => (
-          <div key={news.url}>
-            <Article article={news} />
-          </div>
-        ))}
-      </div>
+    <div class="min-h-screen md:m-5">
+      {newsArticles ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center">
+          {newsArticles.slice(0, articleCount).map((news) => (
+            <div key={news.url}>
+              <Article article={news} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div classname="flex justify-center items-center w-full ">
+          <ShowError />
+        </div>
+      )}
+
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button
@@ -43,7 +51,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      newsArticles,
+      newsArticles: newsArticles ? newsArticles : null,
     },
   };
 }
