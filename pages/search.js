@@ -43,8 +43,8 @@ const SearchPage = () => {
     <div class="min-h-screen md:m-10">
       <Search setQuery={setQuery} setUrl={setUrl} />
 
-      {!emptyQuery && (
-        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  justify-center">
+      {!emptyQuery && !error && (
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4  justify-center">
           {data.slice(0, articleCount).map((news) => (
             <div key={news.url}>
               <Article article={news} />
