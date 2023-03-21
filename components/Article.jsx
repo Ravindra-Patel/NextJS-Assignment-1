@@ -5,8 +5,8 @@ import Image from "next/image";
 const Article = ({ article }) => {
   return (
     <>
-      <div class="border-2 m-2 min-w-[300px] min-h-[350px] h-[50vh] ">
-        <Link href={`/news/${article.source.id}/${article.title}`}>
+      <div class="border-2 m-2 min-w-[350px] md:min-w-[300px] min-h-[350px] md:min-h-[400px] lg:h-[40vh] md:h-[35vh]  ">
+        <Link href={`/news/${article.source.name}/${article.title}`}>
           <div className="h-[60%]">
             {article.urlToImage && (
               <img
