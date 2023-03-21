@@ -1,9 +1,10 @@
 import NewsSource from "../components/NewsSource";
 import { useState } from "react";
+import ShowError from "../components/ShowError";
 
 const TopSources = ({ newsSources }) => {
   const [articleCount, setArticleCount] = useState(12);
-  const totalNews = newsSources.length;
+  const totalNews = newsSources?.length;
 
   function handleArticleCount() {
     setArticleCount((prevState) => prevState + 12);
@@ -11,13 +12,20 @@ const TopSources = ({ newsSources }) => {
 
   return (
     <div class="min-h-screen mx-2 md:mx-4">
-      <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
-        {newsSources.slice(0, articleCount).map((sources) => (
-          <div key={sources.url}>
-            <NewsSource sources={sources} />
-          </div>
-        ))}
-      </div>
+      {newsSources ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {newsSources.slice(0, articleCount).map((sources) => (
+            <div key={sources.url}>
+              <NewsSource sources={sources} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div classname="flex justify-center items-center w-full">
+          <ShowError />
+        </div>
+      )}
+
       {totalNews > articleCount && (
         <div class="flex justify-between">
           <button
@@ -44,7 +52,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      newsSources,
+      newsSources: newsSources ? newsSources : null,
     },
   };
 }
