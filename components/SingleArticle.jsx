@@ -2,9 +2,9 @@ import React from "react";
 
 const SingleArticle = ({ article }) => {
   return (
-    <div>
+    <div className="min-h-[76vh]">
       {article && (
-        <div class="border-2 md:mx-[20vw] mx-5  mb-5">
+        <div class="border-2 xl:mx-[10vw] mx-5 mb-5">
           <div class="w-full pt-5">
             <h3 class="text-lg font-bold md:text-3xl mb-5 ml-4">
               {article.title}
