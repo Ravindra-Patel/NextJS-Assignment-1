@@ -4,7 +4,6 @@ import SingleArticle from "../../../components/SingleArticle";
 
 const Title = ({ article }) => {
   const router = useRouter();
-  console.log(article);
 
   return (
     <div class="min-h-[74vh]">
@@ -36,7 +35,7 @@ const Title = ({ article }) => {
 export default Title;
 
 export async function getServerSideProps(context) {
-  let url = `https://newsapi.org/v2/everything?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&qInTitle=${context.params.title}&sources=${context.params.source}`;
+  let url = `https://newsapi.org/v2/everything?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&qInTitle=${context.params.title}`;
 
   let response = await fetch(url);
 
